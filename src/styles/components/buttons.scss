@@ -8,10 +8,24 @@
   text-decoration: none;
   user-select: none;
   appearance: none;
+  padding: 1rem 8rem;
   &.primary {
-    @include btn-theme($blue);
+    @include btn-theme($blue, $white);
   }
   &.secondary {
-    @include btn-theme($white);
+    @include btn-theme($white, $blue);
+  }
+}
+
+@include media-query($medium-up) {
+  /* tablet */
+  .button {
+    padding: 1rem 6rem;
+  }
+}
+
+@include media-query($large-up) {
+  .button {
+    padding: 1rem 8rem;
   }
 }

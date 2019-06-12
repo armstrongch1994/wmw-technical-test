@@ -12,6 +12,9 @@ a {
   color: $blue;
   font-family: $font-heading;
   font-weight: $font-body-bold-weight;
+  &.hover {
+    text-decoration: underline;
+  }
 }
 
 h1,
