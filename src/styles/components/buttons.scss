@@ -8,4 +8,10 @@
   text-decoration: none;
   user-select: none;
   appearance: none;
+  &.primary {
+    @include btn-theme($blue);
+  }
+  &.secondary {
+    @include btn-theme($white);
+  }
 }

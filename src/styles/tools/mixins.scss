@@ -107,3 +107,12 @@
   margin: 0;
   clip: auto;
 }
+
+@mixin btn-theme($btn-color) {
+  background-color: $btn-color;
+  border-color: $btn-color;
+  &:hover {
+    background-color: #ffffff;
+    color: #003366;
+  }
+}
