@@ -6,7 +6,7 @@
  *
  * @namespace featuredCollection
  */
-import {register} from '@shopify/theme-sections';
+import { register } from '@shopify/theme-sections';
 
 /**
  * Featured collection constructor
@@ -15,7 +15,6 @@ import {register} from '@shopify/theme-sections';
  * @param {string} container - selector for the section container DOM element
  */
 register('featured-collection', {
-
   init() {
     window.console.log('Initialising featured collection section');
   },

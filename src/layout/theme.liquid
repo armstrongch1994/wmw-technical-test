@@ -32,6 +32,7 @@
   {%- endif -%}
 
   <link rel="stylesheet" href="https://use.typekit.net/zqv6jck.css">
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
   {% include 'social-meta-tags' %}
   {% include 'style-tags', layout: 'theme' %}
@@ -53,6 +54,7 @@
   {% if template.directory == 'customers' %}
     <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
   {% endif %}
+   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
   {% include 'script-tags', layout: 'theme' %}
 

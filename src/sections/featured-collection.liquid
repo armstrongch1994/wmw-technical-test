@@ -13,27 +13,34 @@
 
   <p>{{ collection.description }}</p>
 
-  {% for product in collection.products limit: 6 %}
-    {% assign current_variant = product.selected_or_first_available_variant %}
-  
-    <a href="{{ product.url | within: collection }}">
-      <div>
-        {% if product.featured_image != blank %}
-          {{ product.featured_image | img_url: 'large' | img_tag }}
-        {% endif %}
+  <div class="flickity-section-{{ section.id }} flickity-index-slider product" style="background-color: {{ section.settings.bg }}">
+    <div class="flickity-section__carousel main-carousel carousel-{{section.id }} text-center"
+        data-flickity='{
+          "cellAlign": "{{ left}}"
+        }'>
+        {% for product in collection.products limit: 6 %}
+          {% assign current_variant = product.selected_or_first_available_variant %}
         
-        <span js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
-      </div>
+          <a href="{{ product.url | within: collection }}">
+            <div>
+              {% if product.featured_image != blank %}
+                {{ product.featured_image | img_url: 'large' | img_tag }}
+              {% endif %}
+              
+              <span js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
+            </div>
 
-      <div>
-        <p>{{ product.title | escape }}</p>
+            <div>
+              <p>{{ product.title | escape }}</p>
 
-        <span>
-          {% include 'product-price' %}
-        </span>
+              <span>
+                {% include 'product-price' %}
+              </span>
+            </div>
+          </a>
+        {% endfor %}
       </div>
-    </a>
-  {% endfor %}
+  </div>
 </section>
 
 {% schema %}
